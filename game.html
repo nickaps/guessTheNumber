@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+    <link href="./style.css" rel="stylesheet" type="text/css"></link>
+    <head>
+        <title>Guess The Number</title>
+    </head>
+
+    <body>
+        <h1>Guess a Number from 1 to 100</h1>
+        <p>...and really pick a good one because you have guessed <b id='guessText'>0</b> times.</p>
+        <br />
+        <br />
+
+        <div id="winDiv" class="greenHeader">
+            <h1>Correct! You have guessed the correct number</h1>
+        </div>
+
+        <div id="tooHighDiv" class="redHeader">
+            <h1>Too High! Guess again</h1>
+        </div>
+
+        <div id="tooLowDiv" class="redHeader">
+            <h1>Too Low! Guess again</h1>
+        </div>
+
+        <form action="/game" method="post" id="guessForm">
+            <input type='number' placeholder='50' name="guess" min="1" max="100" />
+            <button type="submit">Submit</button>
+        </form>
+
+        <br />
+        <br />
+        <br />
+
+        <button id="returnToMenuButton">Return to Menu</button>
+        
+        <button id="highscoreButton">Highscore</button>
+
+        <script>
+            let guessForm = document.getElementById('guessForm');
+
+            let guessText = document.getElementById('guessText');
+            let returnToMenuButton = document.getElementById('returnToMenuButton');
+            let highscoreButton = document.getElementById('highscoreButton');
+
+            let winDiv = document.getElementById("winDiv");
+            let tooHighDiv = document.getElementById("tooHighDiv");
+            let tooLowDiv = document.getElementById("tooLowDiv");
+
+            winDiv.hidden = true;
+            tooLowDiv.hidden = true;
+            tooHighDiv.hidden = true;
+
+            returnToMenuButton.addEventListener('click', () => {
+                window.location.href = "/";
+            });
+            
+            highscoreButton.addEventListener('click', () => {
+                window.location.href = "/game/highscore";
+            });
+
+            guessForm.addEventListener('submit', (e) => {
+                e.preventDefault();
+
+                let formData = new FormData(guessForm);
+                let data = Object.fromEntries(formData);
+                
+                fetch('/game', {
+                    method: "POST",
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify(data)
+                });
+            });
+
+
+        </script>
+    </body>
+</html>

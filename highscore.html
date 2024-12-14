@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+    <link href="./style.css" rel="stylesheet" type="text/css"></link>
+    <head>
+        <title>Highscore</title>
+    </head>
+
+    <body>
+        <h1>Highscore</h1>
+        <p>Your highscore is <b>2</b> guesses...</p>
+        <br>
+        <button id="returnButton">Return to game</button>
+
+        <script>
+            let returnButton = document.getElementById("returnButton");
+
+            returnButton.addEventListener('click', () => {
+                window.location.href = "/game";
+            });
+        </script>
+    </body>
+</html>

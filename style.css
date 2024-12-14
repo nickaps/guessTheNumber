@@ -1,0 +1,31 @@
+
+* {
+    font-family: 'Courier New', Courier, monospace;
+    background-color:indianred
+}
+p {
+    font-size:large;
+}
+h1 {
+    color:maroon;
+}
+
+.greenHeader h1 {
+    color: green;
+}
+.redHeader h1 {
+    color: maroon;
+}
+
+button {
+    color:maroon;
+    font-size: larger;
+    background-color:darkcyan;
+}
+
+input {
+    background-color:mistyrose;
+    color:maroon;
+    height: 50px;
+    width: 50px;
+}

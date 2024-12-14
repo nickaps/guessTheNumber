@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+    <link href="./style.css" rel="stylesheet" type="text/css"></link>
+    <head>
+        <title>Guess the Number</title>
+    </head>
+
+    <body>
+        <h1>Welcome to the Number Guessing Game!</h1>
+        <b>Would you like to play?</b>
+        <br/>
+        <br/>
+
+        <button id='play-game'>Yes</button>
+        <button id='quit-game'>No</button>
+
+        <script>
+            const playButton = document.getElementById('play-game');
+            const quitButton = document.getElementById('quit-game');
+
+            playButton.addEventListener('click', () => {
+                window.location.href = '/game';
+            });
+
+            quitButton.addEventListener('click', () => {
+                window.location.href = '/wait';
+            });
+        </script>
+
+    </body>
+</html>

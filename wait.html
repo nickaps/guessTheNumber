@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+    <link href="./style.css" rel="stylesheet" type="text/css"></link>
+    <head>
+        <title>The Waiting Room</title>
+    </head>
+
+    <body>
+        <h1>Ok,</h1>
+        <p>...you can wait here until you're ready to play.</p>
+        <button id="imready">I'm ready!</button>
+
+        <script>
+            let ready = document.getElementById("imready");
+            ready.addEventListener('click', () => {
+                window.location.href = "/"
+            });
+        </script>
+    </body>
+</html>
